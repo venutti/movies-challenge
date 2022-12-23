@@ -1,0 +1,20 @@
+$white: #f5f3f3;
+
+.login-form {
+  background-color: #1b1c1e;
+  color: $white;
+  padding: 1rem;
+  border-radius: 10px;
+}
+.login-form h1 {
+  color: $white;
+  text-align: center;
+}
+.login-form input {
+  background-color: rgba($white, 0.35);
+}
+.login-form input:focus {
+  background-color: rgba($white, 0.35);
+}
+
+@import "~bootstrap/scss/bootstrap.scss"
