@@ -1,10 +1,11 @@
 $white: #f5f3f3;
 
-.login-form {
+.login-form.container {
   background-color: #1b1c1e;
   color: $white;
   padding: 1rem;
   border-radius: 10px;
+  max-width: 500px;
 }
 .login-form h1 {
   color: $white;
