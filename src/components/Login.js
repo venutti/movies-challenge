@@ -47,7 +47,7 @@ export default function Login() {
       .post("http://challenge-react.alkemy.org", { email, password })
       .then((res) => {
         // Persistencia del token
-        localStorage.setItem("token", res.data.token);
+        sessionStorage.setItem("token", res.data.token);
         swal({
           title: "Ingreso exitoso",
           text: `¡Bienvenido ${email}!`,
@@ -63,12 +63,12 @@ export default function Login() {
   };
 
   return (
-    <Container className="login-form">
+    <Container className="login-form mb-3">
       <h1>Iniciar sesión</h1>
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="loginEmail">
           <Form.Label>Correo electrónico</Form.Label>
-          <Form.Control type="email" />
+          <Form.Control type="text" />
         </Form.Group>
         <Form.Group className="mb-3" controlId="loginPassword">
           <Form.Label>Contraseña</Form.Label>

@@ -1,5 +1,11 @@
 $white: #f5f3f3;
 
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .login-form.container {
   background-color: #1b1c1e;
   color: $white;
@@ -11,11 +17,15 @@ $white: #f5f3f3;
   color: $white;
   text-align: center;
 }
-.login-form input {
-  background-color: rgba($white, 0.35);
-}
+.login-form input,
 .login-form input:focus {
   background-color: rgba($white, 0.35);
+  color: $white;
+}
+
+.footer {
+  text-align: center;
+  margin-top: auto;
 }
 
 @import "~bootstrap/scss/bootstrap.scss"
