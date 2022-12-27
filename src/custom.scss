@@ -28,4 +28,8 @@ $white: #f5f3f3;
   margin-top: auto;
 }
 
+.navbar-nav .nav-link:last-of-type {
+  margin-right: 1rem;
+}
+
 @import "~bootstrap/scss/bootstrap.scss"

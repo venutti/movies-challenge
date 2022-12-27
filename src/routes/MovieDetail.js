@@ -1,8 +1,10 @@
-import axios from "axios";
 import React, { useState, useEffect } from "react";
-import { Card, CardGroup, Col, Container, Image, Row } from "react-bootstrap";
+// components
+import { Card, Col, Container, Image, Row } from "react-bootstrap";
+// services
 import { NavLink, useNavigate, useParams } from "react-router-dom";
 import swal from "sweetalert";
+import { getMovieDetail } from "../services/moviesApi";
 
 export default function MovieDetail() {
   const { movieID } = useParams();
@@ -10,31 +12,8 @@ export default function MovieDetail() {
   const [movieDetail, setMovieDetail] = useState(null);
 
   useEffect(() => {
-    axios
-      .get(
-        `https://api.themoviedb.org/3/movie/${movieID}?api_key=69fc259515129760c85662f08c141b6f&language=es-ES`
-      )
-      .then((res) => {
-        const genres = res.data.genres.map((genre) => genre.name);
-        const overview = res.data.overview;
-        const poster = `https://image.tmdb.org/t/p/w500${res.data.poster_path}`;
-        const releaseDate = res.data.release_date;
-        const runtime = res.data.runtime;
-        const title = res.data.title;
-        const tagline = res.data.tagline;
-        const rating = res.data.vote_average;
-
-        setMovieDetail({
-          genres,
-          overview,
-          poster,
-          releaseDate,
-          runtime,
-          title,
-          tagline,
-          rating,
-        });
-      })
+    getMovieDetail(movieID)
+      .then((data) => setMovieDetail(data))
       .catch((error) => {
         console.log(error);
         swal({
@@ -43,7 +22,7 @@ export default function MovieDetail() {
           icon: "error",
         }).then(() => navigate("/listado"));
       });
-  }, [movieID]);
+  }, [movieID, navigate]);
 
   if (!movieDetail) return null;
 
