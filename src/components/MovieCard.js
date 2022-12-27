@@ -10,7 +10,7 @@ const formatOverview = (overview) => {
   return temp.join(" ") + "...";
 };
 
-export default function MovieCard({ movie }) {
+export default function MovieCard({ movie, children }) {
   return (
     <Card bg="dark" text="light" className="h-100">
       <Card.Img
@@ -25,6 +25,7 @@ export default function MovieCard({ movie }) {
           Ver detalle
         </NavLink>
       </Card.Body>
+      {children}
     </Card>
   );
 }
