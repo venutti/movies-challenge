@@ -48,6 +48,7 @@ export default function Login() {
       text: `¡Bienvenido ${email}!`,
       icon: "success",
     }).then(() => {
+      sessionStorage.setItem("token", "abc123");
       navigate("/listado");
     });
 
