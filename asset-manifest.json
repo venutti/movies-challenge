@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/movies-challenge/static/css/main.28524584.css",
+    "main.js": "/movies-challenge/static/js/main.31151be7.js",
+    "index.html": "/movies-challenge/index.html",
+    "static/media/star.svg": "/movies-challenge/static/media/star.6159865ea9c8d3e4ccd0.svg",
+    "main.28524584.css.map": "/movies-challenge/static/css/main.28524584.css.map",
+    "main.31151be7.js.map": "/movies-challenge/static/js/main.31151be7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.28524584.css",
+    "static/js/main.31151be7.js"
+  ]
+}
