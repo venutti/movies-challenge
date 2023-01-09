@@ -43,23 +43,31 @@ export default function Login() {
       return;
     }
 
-    axios
-      .post("https://challenge-react.alkemy.org", { email, password })
-      .then((res) => {
-        // Persistencia del token
-        sessionStorage.setItem("token", res.data.token);
-        swal({
-          title: "Ingreso exitoso",
-          text: `¡Bienvenido ${email}!`,
-          icon: "success",
-        }).then(() => {
-          navigate("/listado");
-        });
-      })
-      .catch((e) => {
-        console.log(e);
-        swal("Uups!", "Ocurrió un error con tus credenciales", "error");
-      });
+    swal({
+      title: "Ingreso exitoso",
+      text: `¡Bienvenido ${email}!`,
+      icon: "success",
+    }).then(() => {
+      navigate("/listado");
+    });
+
+    // axios
+    //   .post("http://challenge-react.alkemy.org", { email, password })
+    //   .then((res) => {
+    //     // Persistencia del token
+    //     sessionStorage.setItem("token", res.data.token);
+    //     swal({
+    //       title: "Ingreso exitoso",
+    //       text: `¡Bienvenido ${email}!`,
+    //       icon: "success",
+    //     }).then(() => {
+    //       navigate("/listado");
+    //     });
+    //   })
+    //   .catch((e) => {
+    //     console.log(e);
+    //     swal("Uups!", "Ocurrió un error con tus credenciales", "error");
+    //   });
   };
 
   return (
