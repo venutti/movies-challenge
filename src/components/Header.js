@@ -20,13 +20,13 @@ export default function Header() {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ms-auto g-4">
               <NavLink
-                to="/"
+                to="/login"
                 className={({ isActive }) => getNavLinkClass(isActive)}
               >
-                Home
+                Login
               </NavLink>
               <NavLink
-                to="/listado"
+                to="/"
                 className={({ isActive }) => getNavLinkClass(isActive)}
               >
                 Peliculas

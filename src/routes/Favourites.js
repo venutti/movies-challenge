@@ -15,7 +15,7 @@ export default function Favourites({ favs, toggleFav }) {
       text: "Necesitas estar registrado para acceder a esta página",
       icon: "warning",
     }).then(() => {
-      navigate("/");
+      navigate("/login");
     });
     return null;
   }

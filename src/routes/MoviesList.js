@@ -1,15 +1,11 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Row, Col, Container } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
-import swal from "sweetalert";
 import FavBadge from "../components/FavBadge";
 import MovieCard from "../components/MovieCard";
 import { getPopularMovies } from "../services/moviesApi";
 
 export default function MoviesList({ favs, toggleFav }) {
   const [movies, setMovies] = useState([]);
-  const navigate = useNavigate();
 
   useEffect(() => {
     getPopularMovies()
@@ -18,18 +14,6 @@ export default function MoviesList({ favs, toggleFav }) {
       })
       .catch((error) => console.log(error));
   }, []);
-
-  const token = sessionStorage.getItem("token");
-  if (token === null) {
-    swal({
-      title: "Permiso denegado",
-      text: "Necesitas estar registrado para acceder a esta página",
-      icon: "warning",
-    }).then(() => {
-      navigate("/");
-    });
-    return null;
-  }
 
   return (
     <Container className="mb-3">

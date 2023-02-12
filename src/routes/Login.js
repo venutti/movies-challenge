@@ -36,7 +36,7 @@ export default function Login() {
     if (email !== "challenge@alkemy.org" || password !== "react") {
       swal({
         title: "Credenciales incorrectas",
-        text: "Los datos ingresados son incorrectos",
+        text: "Los datos ingresados son incorrectos. El correo es: challenge@alkemy.org, y la contraseña es: react",
         icon: "error",
       });
       return;
@@ -48,26 +48,8 @@ export default function Login() {
       icon: "success",
     }).then(() => {
       sessionStorage.setItem("token", "abc123");
-      navigate("/listado");
+      navigate("/");
     });
-
-    // axios
-    //   .post("http://challenge-react.alkemy.org", { email, password })
-    //   .then((res) => {
-    //     // Persistencia del token
-    //     sessionStorage.setItem("token", res.data.token);
-    //     swal({
-    //       title: "Ingreso exitoso",
-    //       text: `¡Bienvenido ${email}!`,
-    //       icon: "success",
-    //     }).then(() => {
-    //       navigate("/listado");
-    //     });
-    //   })
-    //   .catch((e) => {
-    //     console.log(e);
-    //     swal("Uups!", "Ocurrió un error con tus credenciales", "error");
-    //   });
   };
 
   return (

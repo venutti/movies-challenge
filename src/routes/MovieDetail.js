@@ -20,7 +20,7 @@ export default function MovieDetail() {
           title: "Ocurrió un error",
           text: "La página solicitada no existe",
           icon: "error",
-        }).then(() => navigate("/listado"));
+        }).then(() => navigate("/"));
       });
   }, [movieID, navigate]);
 
@@ -54,7 +54,7 @@ export default function MovieDetail() {
                 <span className="text-warning">Puntuación: </span>
                 {movieDetail.rating} / 10
               </Card.Text>
-              <NavLink to="/listado" className="btn btn-warning">
+              <NavLink to="/" className="btn btn-warning">
                 Volver al listado
               </NavLink>
             </Card.Footer>

@@ -27,7 +27,11 @@ export default function App() {
     <>
       <Header />
       <Routes>
-        <Route path="/" element={<Login />} />
+        <Route
+          path="/"
+          element={<MoviesList favs={favs} toggleFav={toggleFav} />}
+        />
+        <Route path="/login" element={<Login />} />
         <Route
           path="/listado"
           element={<MoviesList favs={favs} toggleFav={toggleFav} />}
